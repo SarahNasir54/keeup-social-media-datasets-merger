@@ -1,0 +1,48 @@
+{
+"CED": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "text",
+    "timestamp": "time",
+    "username": "username",
+    "follower_count": "followers",
+    "friends_count": "friends",
+    "is_verified": "verified",
+    "repost_count": "reposts",
+    "likes": "likes",
+    "label": "label"
+  },
+  "label_mapping": {
+    "nonrumor": "real",
+    "rumor": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"FbMultiLingMisinfo": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "share_title",
+    "timestamp": "timestamp_first_tweet",
+    "username": "username",
+    "follower_count": "follower_count",
+    "friends_count": "friends_count",
+    "is_verified": "is_verified",
+    "repost_count": "repost_count",
+    "likes": "likes",
+    "label": "tpfc_rating_encoding"
+  },
+  "label_mapping": {
+    "0": "real",
+    "1": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "repost_text",
+    "label": "tpfc_rating_encoding"
+  }
+}
+}
