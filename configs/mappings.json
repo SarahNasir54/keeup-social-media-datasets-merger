@@ -39,10 +39,213 @@
     "0": "real",
     "1": "fake"
   },
+  "repost_mapping": {}
+},
+"MediaEval15": {
+  "column_mapping": {
+    "post_id": "tweetId",
+    "text": "tweetText",
+    "timestamp": "timestamp",
+    "username": "username",
+    "follower_count": "num_followers",
+    "friends_count": "num_friends",
+    "is_verified": "is_verified",
+    "repost_count": "num_retweets",
+    "likes": "likes",
+    "label": "label"
+  },
+  "label_mapping": {},
+  "repost_mapping": {}
+},
+"Pheme5": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "text",
+    "timestamp": "created_at",
+    "username": "username",
+    "follower_count": "followers_count",
+    "friends_count": "friends_count",
+    "is_verified": "verified",
+    "repost_count": "retweet_count",
+    "likes": "favorite_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "non-rumours": "real",
+    "rumours": "fake"
+  },
   "repost_mapping": {
     "post_id": "id",
-    "repost_text": "repost_text",
-    "label": "tpfc_rating_encoding"
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"Pheme9": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "text",
+    "timestamp": "created_at",
+    "username": "username",
+    "follower_count": "followers_count",
+    "friends_count": "friends_count",
+    "is_verified": "verified",
+    "repost_count": "retweet_count",
+    "likes": "favorite_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "rumour": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"Pheme-veracity": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "text",
+    "timestamp": "created_at",
+    "username": "username",
+    "follower_count": "followers_count",
+    "friends_count": "friends_count",
+    "is_verified": "verified",
+    "repost_count": "retweet_count",
+    "likes": "favorite_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "non-rumours": "real",
+    "rumours": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"RumorEval17": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "text",
+    "timestamp": "created_at",
+    "username": "name",
+    "follower_count": "user_followers_count",
+    "friends_count": "user_friends_count",
+    "is_verified": "user_verified",
+    "repost_count": "retweet_count",
+    "likes": "favorite_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "true": "real",
+    "false": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"RumorEval19": {
+  "column_mapping": {
+    "post_id": "post_id",
+    "text": "post_text",
+    "timestamp": "timestamp",
+    "username": "username",
+    "follower_count": "num_followers",
+    "friends_count": "num_friends",
+    "is_verified": "is_verified",
+    "repost_count": "num_retweets",
+    "likes": "likes",
+    "label": "label"
+  },
+  "label_mapping": {
+    "true": "real",
+    "false": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
+  }
+},
+"Social-Honeypot": {
+  "column_mapping": {
+    "post_id": "TweetID",
+    "text": "TweetText",
+    "timestamp": "CreatedAt",
+    "username": "username",
+    "follower_count": "NumberOfFollowers",
+    "friends_count": "NumberOfFollowings",
+    "is_verified": "is_verified",
+    "repost_count": "repost_count",
+    "likes": "likes",
+    "label": "Label"
+  },
+  "label_mapping": {
+    "legitimate": "real",
+    "polluter": "fake"
+  },
+  "repost_mapping": {}
+},
+"Twitter": {
+  "column_mapping": {
+    "post_id": "post_id",
+    "text": "post_text",
+    "timestamp": "timestamp",
+    "username": "username",
+    "follower_count": "num_followers",
+    "friends_count": "num_friends",
+    "is_verified": "is_verified",
+    "repost_count": "num_retweets",
+    "likes": "likes",
+    "label": "label"
+  },
+  "label_mapping": {},
+  "repost_mapping": {}
+},
+"Weibo-data": {
+  "column_mapping": {
+    "post_id": "tweet_id",
+    "text": "tweet_content",
+    "timestamp": "publish_time",
+    "username": "user_name",
+    "follower_count": "user_follow_count",
+    "friends_count": "user_fans_count",
+    "is_verified": "user_auth_type",
+    "repost_count": "retweet_count",
+    "likes": "praise_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "nonrumor": "real",
+    "rumor": "fake"
+  },
+  "repost_mapping": {}
+},
+"Weibo-Rumor": {
+  "column_mapping": {
+    "post_id": "id",
+    "text": "original_text",
+    "timestamp": "timestamp",
+    "username": "username",
+    "follower_count": "followers_count",
+    "friends_count": "friends_count",
+    "is_verified": "verified",
+    "repost_count": "reposts_count",
+    "likes": "favourites_count",
+    "label": "label"
+  },
+  "label_mapping": {
+    "0": "real",
+    "1": "fake"
+  },
+  "repost_mapping": {
+    "post_id": "id",
+    "repost_text": "text",
+    "label": "label"
   }
 }
 }
