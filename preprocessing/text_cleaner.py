@@ -11,16 +11,22 @@ def clean_text(text):
     return text
 
 def standardize_timestamp(value):
+ # Try UNIX timestamp
     try:
-        # If it's numeric, convert from UNIX timestamp (int)
-        return pd.to_datetime(int(value), unit='s')
-    except (ValueError, TypeError):
-        pass  # Ignore and continue to datetime string conversion
+        return pd.to_datetime(int(float(value)), unit='s')
+    except:
+        pass
 
-    # If the value is not numeric, try to convert it as a datetime string
+    # Try Twitter-style string
     try:
-        return pd.to_datetime(value, format='%a %b %d %H:%M:%S %z %Y', errors='coerce')
-    except (ValueError, TypeError):
+        return pd.to_datetime(value, format='%a %b %d %H:%M:%S %z %Y')
+    except:
+        pass
+
+    # Try ISO-style or general datetime string (e.g. "2012-11-13 16:55")
+    try:
+        return pd.to_datetime(value, errors='coerce')
+    except:
         return pd.NaT
 
 
