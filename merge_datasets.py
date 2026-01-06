@@ -183,13 +183,39 @@ def main():
                 print(f"Error processing {name}: {e}")
                 traceback.print_exc()
 
-    # Save the final merged datasets
+    # Merge originals and reposts into a single JSON
     os.makedirs("processed_data", exist_ok=True)
+
     all_originals = pd.concat(originals_list, ignore_index=True)
-    all_reposts = pd.concat(reposts_list, ignore_index=True)
-    save_dataset(all_originals, "processed_data/all_originals.parquet")
-    save_dataset(all_reposts, "processed_data/all_reposts.parquet")
+    all_reposts = pd.concat(
+        [r for r in reposts_list if r is not None],
+        ignore_index=True
+    )
+
+    reposts_grouped = (
+        all_reposts
+        .groupby("post_id")[["repost_text", "label"]]
+        .apply(lambda x: x.to_dict("records"))
+        .to_dict()
+    )
+
+    all_originals["reposts"] = (
+        all_originals["post_id"]
+        .map(reposts_grouped)
+        .apply(lambda x: x if isinstance(x, list) else [])
+    )
+
+    all_originals.to_json(
+        "processed_data/final_dataset.json",
+        orient="records",
+        force_ascii=False,
+        indent=2
+    )
     print(f"Merged Social Media dataset saved with {len(all_originals)} records and reposts are {len(all_reposts)}")
+
+    #save_dataset(all_originals, "processed_data/all_originals.parquet")
+    #save_dataset(all_reposts, "processed_data/all_reposts.parquet")
+    #print(f"Merged Social Media dataset saved with {len(all_originals)} records and reposts are {len(all_reposts)}")
 
 # Run the main function if this script is executed
 if __name__ == '__main__':
