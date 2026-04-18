@@ -12,10 +12,7 @@
     "likes": "likes",
     "label": "label"
   },
-  "label_mapping": {
-    "nonrumor": "real",
-    "rumor": "fake"
-  },
+  "label_mapping": {},
   "repost_mapping": {
     "post_id": "id",
     "repost_text": "text",
@@ -71,8 +68,8 @@
     "label": "label"
   },
   "label_mapping": {
-    "non-rumours": "real",
-    "rumours": "fake"
+    "non-rumours": "nonrumor",
+    "rumours": "rumor"
   },
   "repost_mapping": {
     "post_id": "id",
@@ -94,7 +91,7 @@
     "label": "label"
   },
   "label_mapping": {
-    "rumour": "fake"
+    "rumour": "rumor"
   },
   "repost_mapping": {
     "post_id": "id",
@@ -116,8 +113,8 @@
     "label": "label"
   },
   "label_mapping": {
-    "non-rumours": "real",
-    "rumours": "fake"
+    "non-rumours": "nonrumor",
+    "rumours": "rumor"
   },
   "repost_mapping": {
     "post_id": "id",
@@ -185,8 +182,8 @@
     "label": "Label"
   },
   "label_mapping": {
-    "legitimate": "real",
-    "polluter": "fake"
+    "legitimate": "legitimate",
+    "polluter": "polluter"
   },
   "repost_mapping": {}
 },
@@ -219,10 +216,7 @@
     "likes": "praise_count",
     "label": "label"
   },
-  "label_mapping": {
-    "nonrumor": "real",
-    "rumor": "fake"
-  },
+  "label_mapping": {},
   "repost_mapping": {}
 },
 "Weibo-Rumor": {
